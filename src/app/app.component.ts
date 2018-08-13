@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import * as CryptoJS from 'crypto-js';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 't-up-root',
@@ -14,5 +15,7 @@ export class AppComponent {
     $('body').css('backgroundColor', 'red');
     this.hash = CryptoJS.MD5 ('Hello World').toString();
     console.log( this.hash );
+
+    console.log ( environment.endpoints.api);
   }
 }
