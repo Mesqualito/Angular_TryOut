@@ -12,33 +12,14 @@
         "@schematics/angular:component": {
           "styleext": "scss",
           "spec": false,
-          "flat": true,
-          "inlineStyle": true,
-          "inlineTemplate": true,
           "viewEncapsulation": "Native",
           "changeDetection": "Default"
-        },
-        "@schematics/angular:directive": {
-          "spec": false,
-          "flat": true
-        },
-        "@schematics/angular:guard": {
-          "spec": false,
-          "flat": true
-        },
-        "@schematics/angular:module": {
-          "spec": false,
-          "flat": true
-        },
-        "@schematics/angular:pipe": {
-          "spec": false,
-          "flat": true
         },
         "@schematics/angular:service": {
           "spec": false,
           "flat": true
         },
-          "class": {
+        "class": {
           "spec": true
         },
         "interface": {
@@ -49,6 +30,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "sourcemaps": false,
+            "baseHref": "/",
+            "progress": true,
+            "poll": 1000,
+            "deleteOutputPath": true,
+            "preserveSymlinks": false,
+            "showCircularDependencies": true,
+            "namedChunks": false,
             "outputPath": "dist/ThumbsUp",
             "index": "src/index.html",
             "main": "src/main.ts",
