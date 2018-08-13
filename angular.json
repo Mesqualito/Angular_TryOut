@@ -11,6 +11,12 @@
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
+        },
+        "class": {
+          "spec": true
+        },
+        "interface": {
+          "prefix": "I"
         }
       },
       "architect": {
