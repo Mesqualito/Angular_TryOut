@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "t-up",
+      "prefix": "tup",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"

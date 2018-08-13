@@ -4,13 +4,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "t-up",
+            ["t-up", "tup"],
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "t-up",
+          ["t-up", "tup"],
             "kebab-case"
         ]
     }
