@@ -30,14 +30,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "sourcemaps": false,
-            "baseHref": "/",
-            "progress": true,
-            "poll": 1000,
-            "deleteOutputPath": true,
-            "preserveSymlinks": false,
-            "showCircularDependencies": true,
-            "namedChunks": false,
             "outputPath": "dist/ThumbsUp",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -83,8 +75,7 @@
             "host": "0.0.0.0",
             "ssl": true,
             "sslKey": "ssl/server.key",
-            "sslCert": "ssl/server.cert",
-            "proxyConfig": "path/proxy.conf"
+            "sslCert": "ssl/server.cert"
           },
           "configurations": {
             "production": {
@@ -131,11 +122,6 @@
           }
         }
       }
-    },
-    "warnings": {
-      "nodeDeprecation": true,
-      "packageDeprecation": true,
-      "versionMismatch": true
     },
     "ThumbsUp-e2e": {
       "root": "e2e/",
