@@ -132,6 +132,11 @@
         }
       }
     },
+    "warnings": {
+      "nodeDeprecation": true,
+      "packageDeprecation": true,
+      "versionMismatch": true
+    },
     "ThumbsUp-e2e": {
       "root": "e2e/",
       "projectType": "application",
