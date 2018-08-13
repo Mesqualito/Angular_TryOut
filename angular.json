@@ -19,10 +19,10 @@
           "spec": false,
           "flat": true
         },
-        "class": {
+        "@schematics/angular:class": {
           "spec": true
         },
-        "interface": {
+        "@schematics/angular:interface": {
           "prefix": "I"
         }
       },
