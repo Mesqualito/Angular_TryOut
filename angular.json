@@ -10,9 +10,35 @@
       "prefix": "tup",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "styleext": "scss",
+          "spec": false,
+          "flat": true,
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "viewEncapsulation": "Native",
+          "changeDetection": "Default"
         },
-        "class": {
+        "@schematics/angular:directive": {
+          "spec": false,
+          "flat": true
+        },
+        "@schematics/angular:guard": {
+          "spec": false,
+          "flat": true
+        },
+        "@schematics/angular:module": {
+          "spec": false,
+          "flat": true
+        },
+        "@schematics/angular:pipe": {
+          "spec": false,
+          "flat": true
+        },
+        "@schematics/angular:service": {
+          "spec": false,
+          "flat": true
+        },
+          "class": {
           "spec": true
         },
         "interface": {
