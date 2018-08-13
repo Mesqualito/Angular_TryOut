@@ -8,11 +8,11 @@ export class AppPage {
 
   // find the given selector, return the enclosed text
   getParagraphText() {
-    return element(by.css('tUp-root h1')).getText();
+    return element(by.css('t-up-root h1')).getText();
   }
 
   // return input-field
-  getInputField(){
+  getInputField() {
     return element(by.css('input'));
   }
 
