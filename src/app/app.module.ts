@@ -7,12 +7,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import { UserTypeDirective } from './user/user-type.directive';
 import { UserComponent } from './user/user.component';
+import { UserRolePipe } from './user/user-role.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserTypeDirective,
-    UserComponent
+    UserComponent,
+    UserRolePipe
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,6 @@ import { UserComponent } from './user/user.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [UserTypeDirective, UserComponent]
+  exports: [UserTypeDirective, UserComponent, UserRolePipe]
 })
 export class AppModule { }
