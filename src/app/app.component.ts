@@ -19,7 +19,7 @@ export class AppComponent {
 
     console.log ( environment.endpoints.api);
 
-    console.log ( UserType.WHOLESALER );
+    console.log ( UserType.BIGBUSINESS );
 
   }
 }
