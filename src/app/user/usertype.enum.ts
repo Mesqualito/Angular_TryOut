@@ -1,7 +1,0 @@
-export enum UserType {
-  PRIVATE, // 0
-  BUSINESS, // 1
-  RESELLER =  1001, // 1001
-  WHOLESALER, // 1002
-  BIGBUSINESS = 'BIGBUSINESS' // BIGBUSINESS
-}

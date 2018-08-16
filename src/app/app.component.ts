@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import * as CryptoJS from 'crypto-js';
 import {environment} from '../environments/environment';
-import {UserType} from './user/usertype.enum';
 
 @Component({
   selector: 't-up-root',
@@ -19,7 +18,7 @@ export class AppComponent {
 
     console.log ( environment.endpoints.api);
 
-    console.log ( UserType.BIGBUSINESS );
+
 
   }
 }
