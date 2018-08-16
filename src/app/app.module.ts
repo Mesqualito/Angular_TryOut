@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material';
 import { UserTypeDirective } from './user/user-type.directive';
 import { UserComponent } from './user/user.component';
 import { UserRolePipe } from './user/user-role.pipe';
+import {UserAuthGuard} from './user/user-auth.guard';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UserRolePipe } from './user/user-role.pipe';
     MatButtonModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserAuthGuard],
   bootstrap: [AppComponent],
   exports: [UserTypeDirective, UserComponent, UserRolePipe]
 })
