@@ -2,13 +2,12 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": [
-      "crypto-js",
-      "jquery"
-    ]
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": []
   },
   "exclude": [
-    "src/test.ts",
+    "test.ts",
     "**/*.spec.ts"
   ]
 }

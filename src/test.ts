@@ -1,6 +1,4 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
-// To load and use Unit-Tests in Angular, this file and 'karma.conf.js'
-// must be referenced in 'angular.json' (former: '.angular-cli.json')
 
 import 'zone.js/dist/zone-testing';
 import { getTestBed } from '@angular/core/testing';
