@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+  name = 'Jochen Haßfurter';
+  chgName() {
+    if(this.name.endsWith("Haßfurter")) {
+      this.name = 'Jochen Gebsattel';
+    } else {
+      this.name = 'Jochen Haßfurter';
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {
