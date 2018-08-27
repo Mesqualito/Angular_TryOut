@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'in-user-list',
-  template: ''
+  template: '<h1>User List</h1>'
 })
 export class UserListComponent {
 
