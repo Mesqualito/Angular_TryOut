@@ -1,3 +1,9 @@
+/* 'host:' takes care of a more global approach and means the whole 'UserListComponent' */
+:host {
+    display: block;
+    background-color: gainsboro;
+  }
+
 h1 {
   text-shadow: darkslategray;
   color: crimson;
