@@ -9,6 +9,6 @@ import {Component, ViewEncapsulation} from '@angular/core';
 export class UserListComponent {
 
   constructor() {
-    console.log('Hello UserList');
+    console.log('the constructor: 1st stage of life of a component, here:  \'UserList\'');
   }
 }
