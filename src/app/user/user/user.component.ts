@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, DoCheck, OnInit} from '@angular/core';
 
 @Component({
   selector: 'in-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit,AfterViewInit {
+export class UserComponent implements OnInit, AfterViewInit, DoCheck {
 
   name = 'Jochen Haßfurter';
   chgName() {
@@ -23,7 +23,12 @@ export class UserComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log ( '\'AfterViewInit\': the children in the template \'user.component.html\' of \'UserComponent\' completed initialisation' );
+    console.log ( '\'AfterViewInit\': the children \'<in-user-name></in-user-name>\' ' +
+      'and \'<in-user-list></in-user-list>\' in the template \'user.component.html\' of \'UserComponent\' completed initialisation' );
+  }
+
+  ngDoCheck(): void {
+    console.log ( '\'DoCheck\' of \'UserComponent\' done!' );
   }
 
 }

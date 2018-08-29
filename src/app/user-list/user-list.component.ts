@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, DoCheck, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'in-user-list',
@@ -6,7 +6,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./user-list.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit, DoCheck {
 
   constructor() {
     console.log('the constructor: 1st stage of life of a component, here:  \'UserListComponent\'');
@@ -14,5 +14,9 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log( '\'OnInit\': 3rd stage of life of a component, here: \'UserListComponent\'' );
+  }
+
+  ngDoCheck(): void {
+    console.log ( '\'DoCheck\' of \'UserListComponent\' done!' );
   }
 }
