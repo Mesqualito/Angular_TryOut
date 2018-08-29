@@ -7,7 +7,7 @@ import {Component, DoCheck, OnInit} from '@angular/core';
 })
 export class UserNameComponent implements OnInit, DoCheck {
   get privateDescription(): string {
-    return `Achtung: ${this._privateDescription}`;
+    return this._privateDescription;
   }
 
   set privateDescription(value: string) {
@@ -18,6 +18,11 @@ export class UserNameComponent implements OnInit, DoCheck {
   private _privateDescription = 'auch mit Gettern und Settern möglich...';
 
   constructor() { }
+
+  getPrivateDescription (): string {
+    console.log ( 'return _privateDescription:\'', this._privateDescription, '\'');
+    return this._privateDescription;
+  }
 
   ngOnInit() {
     console.log ( '\'OnInit\': 3rd stage of life of a component, here: \'UserNameComponent\'' );
