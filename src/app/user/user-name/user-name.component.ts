@@ -19,11 +19,6 @@ export class UserNameComponent implements OnInit, DoCheck {
 
   constructor() { }
 
-  getPrivateDescription (): string {
-    console.log ( 'return _privateDescription:\'', this._privateDescription, '\'');
-    return this._privateDescription;
-  }
-
   ngOnInit() {
     console.log ( '\'OnInit\': 3rd stage of life of a component, here: \'UserNameComponent\'' );
   }
