@@ -6,6 +6,16 @@ import {Component, DoCheck, OnInit} from '@angular/core';
   styleUrls: ['./user-name.component.scss']
 })
 export class UserNameComponent implements OnInit, DoCheck {
+  get privateDescription(): string {
+    return 'Achtung: ' + this._privateDescription;
+  }
+
+  set privateDescription(value: string) {
+    this._privateDescription = value;
+  }
+
+  description = 'Dies ist ein Beschreibungs-String!';
+  private _privateDescription = 'auch mit Gettern und Settern möglich...';
 
   constructor() { }
 
