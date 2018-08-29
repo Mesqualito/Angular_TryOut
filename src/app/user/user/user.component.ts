@@ -1,11 +1,11 @@
-import {AfterViewChecked, AfterViewInit, Component, DoCheck, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'in-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked {
+export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked, OnDestroy {
 
   name = 'Jochen Haßfurter';
   chgName() {
@@ -34,5 +34,10 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
   ngAfterViewChecked(): void {
     console.log ( '\'AfterViewChecked\' of \'UserComponent\' done!' );
   }
+
+  ngOnDestroy(): void {
+    console.log ( '\'OnDestroy\' of \'UserComponent\' done!' );
+  }
+
 
 }
