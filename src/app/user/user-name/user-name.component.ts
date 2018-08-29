@@ -7,7 +7,7 @@ import {Component, DoCheck, OnInit} from '@angular/core';
 })
 export class UserNameComponent implements OnInit, DoCheck {
   get privateDescription(): string {
-    return 'Achtung: ' + this._privateDescription;
+    return `Achtung: ${this._privateDescription}`;
   }
 
   set privateDescription(value: string) {
