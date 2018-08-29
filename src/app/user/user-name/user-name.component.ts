@@ -10,6 +10,7 @@ export class UserNameComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log ( '\'OnInit\': 3rd stage of life of a component, here: \'UserNameComponent\'' );
   }
 
 }

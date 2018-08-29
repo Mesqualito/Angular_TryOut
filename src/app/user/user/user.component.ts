@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'in-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit,AfterViewInit {
 
   name = 'Jochen Haßfurter';
   chgName() {
@@ -19,6 +19,11 @@ export class UserComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log ( '\'OnInit\': 3rd stage of life of a component, here: \'UserComponent\'' );
+  }
+
+  ngAfterViewInit(): void {
+    console.log ( '\'AfterViewInit\': the children in the template \'user.component.html\' of \'UserComponent\' completed initialisation' );
   }
 
 }

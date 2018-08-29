@@ -9,10 +9,10 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 export class UserListComponent implements OnInit {
 
   constructor() {
-    console.log('the constructor: 1st stage of life of a component, here:  \'UserList\'');
+    console.log('the constructor: 1st stage of life of a component, here:  \'UserListComponent\'');
   }
 
   ngOnInit(): void {
-    console.log( '\'OnInit\': 3rd stage of life of a component, here: \'UserList\'' );
+    console.log( '\'OnInit\': 3rd stage of life of a component, here: \'UserListComponent\'' );
   }
 }
