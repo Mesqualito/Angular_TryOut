@@ -1,7 +1,7 @@
 <h3>{{ description }}</h3>
 <p>{{ privateDescription }}</p>
 
-<div [innerHtml]="htmlContent"></div>
+<div [innerHtml]="htmlContent" [attr.aria-label]="ariaDescription"></div>
 <!-- 'src' nimmt eine Sonderstellung ein:
 - als eine Eigenschaft der img-Instanz
 - als Attribut nutzbar -->

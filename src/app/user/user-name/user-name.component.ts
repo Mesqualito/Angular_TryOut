@@ -28,6 +28,7 @@ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
 
   imgPath = '/assets/img/Beer-belly 5.jpg';
   private _altLabel = 'Beer-belly!';
+  ariaDescription = 'A man between flowers on a meadow with a big beer belly...';
 
   getAltLabel(): string {
     return this._altLabel;
