@@ -27,7 +27,11 @@ sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>`;
 
   imgPath = '/assets/img/Beer-belly 5.jpg';
-  altLabel = 'Beer-belly!';
+  private _altLabel = 'Beer-belly!';
+
+  getAltLabel(): string {
+    return this._altLabel;
+  };
 
   constructor() { }
 
