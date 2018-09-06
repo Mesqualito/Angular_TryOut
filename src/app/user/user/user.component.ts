@@ -10,8 +10,9 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
   name = 'Jochen Haßfurter';
   authorNameStyleClass = 'author-name';
 
-  @HostListener ('click')
-  chgName( /*event: MouseEvent*/ ) {
+  @HostListener ('click', ['$event'] )
+  chgName( event: MouseEvent ) {
+    console.log( event );
     if (this.name.endsWith('Haßfurter')) {
       this.name = 'Jochen Gebsattel';
     } else {
@@ -20,7 +21,7 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
   }
 
   get isAdminUser (): boolean {
-    return this.name === 'Jochen Haßfurter'
+    return this.name === 'Jochen Haßfurter';
 
   }
 
