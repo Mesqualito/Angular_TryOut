@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'in';
   showUserInfo = true;
 
+  // NOT registered to the app-component itself,
+  // but on the 'window' !
   @HostListener('window:resize', ['$event'])
   resize ( event: Event ) {
     console.log( event );
