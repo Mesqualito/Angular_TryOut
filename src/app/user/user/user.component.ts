@@ -10,13 +10,16 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
   name = 'Jochen Haßfurter';
   authorNameStyleClass = 'author-name';
   chgName() {
-    if(this.name.endsWith("Haßfurter")) {
+    if (this.name.endsWith('Haßfurter')) {
       this.name = 'Jochen Gebsattel';
-      this.authorNameStyleClass = 'changed-author-name';
     } else {
       this.name = 'Jochen Haßfurter';
-      this.authorNameStyleClass = 'author-name';
     }
+  }
+
+  get isAdminUser (): boolean {
+    return this.name === 'Jochen Haßfurter'
+
   }
 
   constructor() { }
