@@ -10,14 +10,19 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
   name = 'Jochen Haßfurter';
   authorNameStyleClass = 'author-name';
 
-  @HostListener ('click', ['$event'] )
-  chgName( event: MouseEvent ) {
+  @HostListener ('click', ['$event', 'name'] )
+  chgName( event: MouseEvent, name: string ) {
     console.log( event );
+    console.log( `Before the if-clause - 'name' has the value: ${name}` );
+    console.log( `Before the if-clause - 'this.name' has the value: ${this.name}` );
     if (this.name.endsWith('Haßfurter')) {
       this.name = 'Jochen Gebsattel';
     } else {
       this.name = 'Jochen Haßfurter';
     }
+    console.log( `After the if-clause - 'name' has still the value: ${name}.
+    The value entered the method as the parameter 'name' and will not be changed within the method!!
+    But of course, 'this.name' (now '${this.name}') will be shown!` );
   }
 
   get isAdminUser (): boolean {
