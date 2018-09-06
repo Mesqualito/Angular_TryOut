@@ -16,7 +16,8 @@ export class UserNameComponent implements OnInit, DoCheck {
 
   description = 'Dies ist ein Beschreibungs-String!';
 
-  fontColor = 'red';
+  descrFontColor = 'red';
+  descrFontSize =  1.3;
 
   private _privateDescription = 'auch mit Gettern und Settern möglich...';
 
