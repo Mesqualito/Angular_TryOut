@@ -1,4 +1,6 @@
-<h3>{{ description }}</h3>
+
+<h3 style="color: red" [style.color]>{{ description }}</h3>
+
 <p>{{ privateDescription }}</p>
 
 <div [innerHtml]="htmlContent" [attr.aria-label]="ariaDescription"></div>
