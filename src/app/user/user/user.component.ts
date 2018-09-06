@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostListener, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'in-user',
@@ -10,8 +10,8 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
   name = 'Jochen Haßfurter';
   authorNameStyleClass = 'author-name';
 
-  chgName( event: MouseEvent ) {
-    debugger
+  @HostListener ('click')
+  chgName( /*event: MouseEvent*/ ) {
     if (this.name.endsWith('Haßfurter')) {
       this.name = 'Jochen Gebsattel';
     } else {
