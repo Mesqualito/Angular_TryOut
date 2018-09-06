@@ -1,7 +1,7 @@
 
-<h1 class="author-name" [class.changed-author-name]="isAdminUser">{{name}}</h1>
+<h1 [class.changed-author-name]="isAdminUser">{{name}}</h1>
 
-<button (click)="chgName()">Ändern</button>
+<button (click)="name = 'Paul Prankatz'"> Ändere Benutzername</button>
 
 
 <in-user-name></in-user-name>
