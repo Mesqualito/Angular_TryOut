@@ -1,9 +1,6 @@
-<h1>{{name}}</h1>
-<!-- Ereignis: wird durch die runden Klammern um 'click' angezeigt -->
-<!-- es wird ein 'addEventListener' auf 'click' hinzu gefügt, explizit für diesen Button -->
-<!-- 'chgName()' ist dann eine Bindung: wenn auf den Button geklickt wird, wird in der Logikschicht die
-Methode "chgName()" ausgeführt. 'chgName()' aktualisiert 'this.name', deswegen wird das <h1> mit den
-neuen Werten gerendert. -->
+
+<h1 class="author-name">{{name}}</h1>
+
 <button (click)="chgName()">Ändern</button>
 
 <in-user-name></in-user-name>
