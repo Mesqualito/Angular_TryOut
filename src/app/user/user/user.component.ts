@@ -8,6 +8,7 @@ import {AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit} 
 export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked, OnDestroy {
 
   name = 'Jochen Haßfurter';
+  authorNameStyleClass = 'author-name';
   chgName() {
     if(this.name.endsWith("Haßfurter")) {
       this.name = 'Jochen Gebsattel';
