@@ -1,7 +1,7 @@
 
 <h1 [class.changed-author-name]="isAdminUser">{{name}}</h1>
 
-<button (click)="chgName()"> Ändere Benutzername</button>
+<button (click)="chgName( $event )"> Ändere Benutzername</button>
 
 
 <in-user-name></in-user-name>

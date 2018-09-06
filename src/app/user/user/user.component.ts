@@ -9,7 +9,9 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
 
   name = 'Jochen Haßfurter';
   authorNameStyleClass = 'author-name';
-  chgName() {
+
+  chgName( event: MouseEvent ) {
+    debugger
     if (this.name.endsWith('Haßfurter')) {
       this.name = 'Jochen Gebsattel';
     } else {
