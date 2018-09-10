@@ -6,26 +6,34 @@ import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, HostLi
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked, OnDestroy {
+  get name(): string {
+    return this._name;
+  }
 
-  @Input ('username')
-  name = 'Jochen Haßfurter';
+  @Input ()
+  set name(value: string) {
+    this._name = value;
+  }
+
+  private _name = 'Jochen Haßfurter';
+
   authorNameStyleClass = 'author-name';
 
-  @HostListener ('click', ['$event', 'name'] )
+  @HostListener ('click', ['$event', '_name'] )
   chgName( event: MouseEvent, name: string ) {
     console.log( event );
     console.log( `Before the if-clause - 'name' has the value: ${name}` );
-    console.log( `Before the if-clause - 'this.name' has the value: ${this.name}` );
-    if (this.name.endsWith('Haßfurter')) {
-      this.name = 'Jochen Gebsattel';
+    console.log( `Before the if-clause - 'this.name' has the value: ${this._name}` );
+    if (this._name.endsWith('Haßfurter')) {
+      this._name = 'Jochen Gebsattel';
       this.isAdminUser = false;
     } else {
-      this.name = 'Jochen Haßfurter';
+      this._name = 'Jochen Haßfurter';
       this.isAdminUser = true;
     }
     console.log( `After the if-clause - 'name' has still the value: ${name}.
     The value entered the method as the parameter 'name' and will not be changed within the method!!
-    But of course, 'this.name' (now '${this.name}') will be shown!` );
+    But of course, 'this.name' (now '${this._name}') will be shown!` );
   }
 
   @HostBinding ('class.changed-author-name')
