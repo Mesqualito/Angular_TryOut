@@ -14,6 +14,5 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   resize ( event: Event ) {
     console.log( event );
-  };
-
+  }
 }
