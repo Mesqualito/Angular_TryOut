@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'in-user',
@@ -7,6 +7,7 @@ import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, HostLi
 })
 export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked, OnDestroy {
 
+  @Input ('username')
   name = 'Jochen Haßfurter';
   authorNameStyleClass = 'author-name';
 
