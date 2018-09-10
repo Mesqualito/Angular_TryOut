@@ -1,51 +1,47 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import { Component, HostBinding, HostListener, Input, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'in-user-name',
+@Component ( {
+  selector   : 'in-user-name',
   templateUrl: './user-name.component.html',
-  styleUrls: ['./user-name.component.scss']
-})
-export class UserNameComponent implements OnInit, DoCheck {
-  get privateDescription(): string {
-    return this._privateDescription;
+  styleUrls  : [ './user-name.component.scss' ]
+} )
+export class UserNameComponent implements OnInit {
+
+
+  get name (): string {
+    return this._name;
+  }
+  @Input ()
+  set name ( value: string ) {
+    if ( value.trim() !== '' ) {
+      this._name = value;
+    }
   }
 
-  set privateDescription(value: string) {
-    this._privateDescription = value;
+  userNameStyleClass = 'user-name';
+
+  private _name                = 'Jochen Haßfurter';
+
+  @HostBinding ( 'class.user-name' )
+  isAdminUser = false;
+
+  constructor () {
   }
 
-  description = 'Dies ist ein Beschreibungs-String!';
-
-  descrFontColor = 'red';
-  descrFontSize =  1.8;
-
-  private _privateDescription = 'auch mit Gettern und Settern möglich...';
-
-  htmlContent: string = `<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>`;
-
-  imgPath = '/assets/img/Beer-belly 5.jpg';
-  private _altLabel = 'Beer-belly!';
-  ariaDescription = 'A man between flowers on a meadow with a big beer belly...';
-
-  getAltLabel(): string {
-    return this._altLabel;
-  };
-
-  constructor() { }
-
-  ngOnInit() {
-    console.log ( '\'OnInit\': 3rd stage of life of a component, here: \'UserNameComponent\'' );
+  ngOnInit () {
   }
 
-  ngDoCheck(): void {
-    console.log ( '\'DoCheck\' of \'UserNameComponent\' done!' );
+  @HostListener ( 'click', [ '$event',
+    '_name'
+  ] )
+  chgName ( event: MouseEvent, name: string ) {
+    console.log ( event, name );
+    if ( this._name !== 'Jochen Gebsattel' ) {
+      this._name       = 'Jochen Gebsattel';
+      this.isAdminUser = false;
+    } else {
+      this._name       = 'Jochen Haßfurter';
+      this.isAdminUser = true;
+    }
   }
-
 }

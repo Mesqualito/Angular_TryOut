@@ -3,23 +3,5 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-
-  <!-- strukturelle Direktive *ngIf -->
-  <in-user name="Barz Haatz" *ngIf="showUserInfo"></in-user>
-  <in-user name="true"></in-user>
-  <in-user name></in-user>
-  <in-user></in-user>
-  <in-user-name></in-user-name>
-  <in-user-list></in-user-list>
 </div>
-<footer>
-  <a href="https://www.linkedin.com/learning/instructors/saban-unlu" target="_blank">
-    <img src="../assets/img/linkedin-logo.png" alt="linkedin">
-  </a>
-  <a href="https://www.nettrek.de/" target="_blank">
-    <img src="../assets/img/logo.png" alt="netTrek">
-  </a>
-  <a href="https://github.com/netTrek/LinkedIn_Angular_Grundlagen" target="_blank">
-    <img src="../assets/img/github.png" alt="github">
-  </a>
-</footer>
+<in-user *ngIf="showUserInfo"></in-user>
