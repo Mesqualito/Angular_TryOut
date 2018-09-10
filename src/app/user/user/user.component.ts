@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, HostListener, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'in-user',
@@ -17,18 +17,18 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
     console.log( `Before the if-clause - 'this.name' has the value: ${this.name}` );
     if (this.name.endsWith('Haßfurter')) {
       this.name = 'Jochen Gebsattel';
+      this.isAdminUser = false;
     } else {
       this.name = 'Jochen Haßfurter';
+      this.isAdminUser = true;
     }
     console.log( `After the if-clause - 'name' has still the value: ${name}.
     The value entered the method as the parameter 'name' and will not be changed within the method!!
     But of course, 'this.name' (now '${this.name}') will be shown!` );
   }
 
-  get isAdminUser (): boolean {
-    return this.name === 'Jochen Haßfurter';
-
-  }
+  @HostBinding ('class.changed-author-name')
+  isAdminUser = false;
 
   constructor() { }
 

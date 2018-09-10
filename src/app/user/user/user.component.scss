@@ -4,24 +4,7 @@
   &:hover {
     cursor: pointer;
   }
-}
-
-h1 {
-  color: blueviolet;
-}
-
-button {
-  background-color: black;
-  color: white;
-  font-weight: bolder;
-}
-
-/* css-class 'author-name' */
-.author-name {
-  color: darkred;
-}
-
-/* css-class 'changed-name' */
-.changed-author-name {
-  color: deeppink;
+  &.changed-author-name {
+    color: deeppink;
+  }
 }
