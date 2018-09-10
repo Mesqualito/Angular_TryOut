@@ -10,21 +10,23 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
     return this._name;
   }
 
-  @Input ()
+  @Input()
   set name(value: string) {
-    console.log( value );
-    this._name = value;
+    console.log(value);
+    if (value.trim() !== '') {
+      this._name = value;
+    }
   }
 
   private _name = 'Jochen Haßfurter';
 
   authorNameStyleClass = 'author-name';
 
-  @HostListener ('click', ['$event', '_name'] )
-  chgName( event: MouseEvent, name: string ) {
-    console.log( event );
-    console.log( `Before the if-clause - 'name' has the value: ${name}` );
-    console.log( `Before the if-clause - 'this.name' has the value: ${this._name}` );
+  @HostListener('click', ['$event', '_name'])
+  chgName(event: MouseEvent, name: string) {
+    console.log(event);
+    console.log(`Before the if-clause - 'name' has the value: ${name}`);
+    console.log(`Before the if-clause - 'this.name' has the value: ${this._name}`);
     if (this._name.endsWith('Haßfurter')) {
       this._name = 'Jochen Gebsattel';
       this.isAdminUser = false;
@@ -32,35 +34,36 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
       this._name = 'Jochen Haßfurter';
       this.isAdminUser = true;
     }
-    console.log( `After the if-clause - 'name' has still the value: ${name}.
+    console.log(`After the if-clause - 'name' has still the value: ${name}.
     The value entered the method as the parameter 'name' and will not be changed within the method!!
-    But of course, 'this.name' (now '${this._name}') will be shown!` );
+    But of course, 'this.name' (now '${this._name}') will be shown!`);
   }
 
-  @HostBinding ('class.changed-author-name')
+  @HostBinding('class.changed-author-name')
   isAdminUser = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    console.log ( '\'OnInit\': 3rd stage of life of a component, here: \'UserComponent\'' );
+    console.log('\'OnInit\': 3rd stage of life of a component, here: \'UserComponent\'');
   }
 
   ngAfterViewInit(): void {
-    console.log ( '\'AfterViewInit\': the children \'<in-user-name></in-user-name>\' ' +
-      'and \'<in-user-list></in-user-list>\' in the template \'user.component.html\' of \'UserComponent\' completed initialisation' );
+    console.log('\'AfterViewInit\': the children \'<in-user-name></in-user-name>\' ' +
+      'and \'<in-user-list></in-user-list>\' in the template \'user.component.html\' of \'UserComponent\' completed initialisation');
   }
 
   ngDoCheck(): void {
-    console.log ( '\'DoCheck\' of \'UserComponent\' done!' );
+    console.log('\'DoCheck\' of \'UserComponent\' done!');
   }
 
   ngAfterViewChecked(): void {
-    console.log ( '\'AfterViewChecked\' of \'UserComponent\' done!' );
+    console.log('\'AfterViewChecked\' of \'UserComponent\' done!');
   }
 
   ngOnDestroy(): void {
-    console.log ( '\'OnDestroy\' of \'UserComponent\' done!' );
+    console.log('\'OnDestroy\' of \'UserComponent\' done!');
   }
 
 
