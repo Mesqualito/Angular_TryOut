@@ -12,6 +12,7 @@ export class UserComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
 
   @Input ()
   set name(value: string) {
+    console.log( value );
     this._name = value;
   }
 
