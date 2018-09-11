@@ -12,6 +12,8 @@ export class UserListComponent implements OnInit{
   user2 = 'Benutzerin Zwei';
   user3 = 'Jochen Gebsattel';
 
+  user1City = 'Musterstadt';
+
   constructor() { }
   ngOnInit() {  }
 }
