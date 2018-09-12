@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'in-root',
@@ -6,11 +6,17 @@ import {Component, HostListener} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showImg = true;
   title = 'in';
-  showUserInfo = true;
 
-  @HostListener('window:resize', ['$event'])
-  resize ( event: Event ) {
-    console.log( event );
+  toggle() {
+    /*
+    * if (this.showImg === true) {
+    * this.showImg = false;
+    * } else {
+    *  this.showImg = true;
+    * }
+    */
+    this.showImg = !this.showImg;
   }
 }

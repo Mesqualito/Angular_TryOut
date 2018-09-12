@@ -3,5 +3,26 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+
+  <button (click)="toggle ()">Toggle</button>
+  <hr>
+  <img *ngIf="showImg" src="../assets/img/linkedin-logo.png" alt="LinkedIn-Logo">
+
+
+  <in-user></in-user>
 </div>
-<in-user *ngIf="showUserInfo"></in-user>
+
+<footer>
+  <a href="https://github.com/Mesqualito/Angular_TryOut" target="_blank">
+    <img src="../assets/img/github.png" alt="github">
+  </a> *
+  <a href="https://www.linkedin.com/learning/instructors/saban-unlu" target="_blank">
+    <img src="../assets/img/linkedin-logo.png" alt="linkedin">
+  </a> *
+  <a href="https://www.nettrek.de/" target="_blank">
+    <img src="../assets/img/logo.png" alt="netTrek">
+  </a> *
+  <a href="https://github.com/netTrek/LinkedIn_Angular_Grundlagen" target="_blank">
+    <img src="../assets/img/github.png" alt="github">
+  </a>
+</footer>
