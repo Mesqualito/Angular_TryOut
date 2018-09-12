@@ -1,23 +1,26 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
-@Component ( {
+@Component({
   selector: 'in-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: [ './user-list.component.scss' ],
+  styleUrls: ['./user-list.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class UserListComponent implements OnInit{
+export class UserListComponent implements OnInit {
 
-  user1 = 'Benutzer Eins';
-  user2 = 'Benutzerin Zwei';
-  user3 = 'Jochen Gebsattel';
+  users: string[] = [
+    'Benutzer Eins',
+    'Benutzerin Zwei',
+    'Jochen Gebsattel'
+  ];
 
-  currentUser3Name: string;
+  selectedUsrName: string;
 
-  user1City = 'Musterstadt';
+  constructor() {
+  }
 
-  constructor() { }
-  ngOnInit() {  }
+  ngOnInit() {
+  }
 
   /*
   * Method 'onNameChanged ()' as EventHandler for the
@@ -25,9 +28,9 @@ export class UserListComponent implements OnInit{
   * The information itself is contained in '$event'.
   * 'nameChanged' will transfer a String as defined in 'user-name.component.ts'
    */
-  onNameChanged ( newName: string ) {
-    console.log( `'newName': ${newName}`);
-    this.currentUser3Name = newName;
+  onSelectedUsr( selectedUsrName: string) {
+    console.log(`'selectedUsrName': ${selectedUsrName}`);
+    this.selectedUsrName = selectedUsrName;
   }
 
 }
