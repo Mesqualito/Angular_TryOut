@@ -45,11 +45,15 @@ export class UserNameComponent implements OnInit, OnChanges {
   constructor() {
   }
 
+  ngOnChanges ( changes: SimpleChanges ): void {
+    console.log ( changes );
+  }
+
   ngOnInit() {
   }
 
   @HostListener('click', ['$event', '_name'])
-  chgName(event: MouseEvent, name: string) {
+  chgName( event: MouseEvent, name: string ) {
     console.log(event, name);
     if (this._name !== 'Jochen Haßfurter') {
       this._name = 'Jochen Haßfurter';
@@ -57,9 +61,5 @@ export class UserNameComponent implements OnInit, OnChanges {
       this._name = 'Jochen Gebsattel';
     }
     this.nameChanged.emit( this.name );
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
   }
 }
