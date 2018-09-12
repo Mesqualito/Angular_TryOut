@@ -6,8 +6,16 @@
 
   <button (click)="toggle ()">Toggle</button>
   <hr>
-  <img *ngIf="showImg" src="../assets/img/linkedin-logo.png" alt="LinkedIn-Logo">
-
+  <img
+    *ngIf="showImg"
+    src="../assets/img/linkedin-logo.png"
+    alt="LinkedIn-Logo">
+<br />
+  <ng-template>
+    <img
+      src="../assets/img/linkedin-logo.png"
+      alt="LinkedIn-Logo">
+  </ng-template>
 
   <in-user></in-user>
 </div>
