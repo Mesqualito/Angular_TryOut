@@ -1,11 +1,25 @@
-
 :host {
   display: block;
   background-color: beige;
   &:hover {
     cursor: pointer;
+    color: #225982;
+    background-color: inherit;
   }
   &.user-name {
-    color: lightgrey;
+    color: #009fe3;
   }
+}
+
+.user-name  {
+  display: inline-block;
+  width: 25%;
+}
+.user-age {
+  display: inline-block;
+  width: 7%;
+}
+.user-data {
+  display: inline-block;
+  width: 65%;
 }

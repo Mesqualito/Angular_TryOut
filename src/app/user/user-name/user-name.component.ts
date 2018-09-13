@@ -1,4 +1,5 @@
 import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
+import {User} from '../user';
 
 @Component({
   selector: 'in-user-name',
@@ -8,27 +9,15 @@ import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outpu
 export class UserNameComponent implements OnInit {
 
   @Output()
-  selectUsr: EventEmitter<string> = new EventEmitter();
-
-  get name(): string {
-    return this._name;
-  }
+  selectUsr: EventEmitter<User> = new EventEmitter();
 
   @Input()
-  set name(value: string) {
-    if (value.trim() !== '') {
-      this._name = value;
-    }
-  }
+  user: User;
 
-  userNameStyleClass = 'user-name';
+  @Input()
+  data: any;
 
-  @Input ()
-  age; number;
-
-  private _name = 'Jochen Haßfurter';
-
-  @Input ()
+  @Input()
   @HostBinding('class.user-name')
   isSelected = false;
 
@@ -40,6 +29,6 @@ export class UserNameComponent implements OnInit {
 
   @HostListener('click')
   selectUser() {
-    this.selectUsr.emit( this.name );
+    this.selectUsr.emit(this.user);
   }
 }

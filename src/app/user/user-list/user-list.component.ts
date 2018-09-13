@@ -10,14 +10,14 @@ import {User} from '../user';
 export class UserListComponent implements OnInit {
 
   users: User[] = [
-    { name: 'Fritz Holland', age: 32 },
-    { name: 'Bernd Brotteig', age: 56 },
-    { name: 'Jochen Gebsattel', age: 42 },
-    { name: 'Olaf Mayer', age: 10 },
-    { name: 'Mister P.', age: 39 }
+    { name: 'Fritz Holland', age: 32, imgPath: 'assets/img/Beer-belly 1.jpg' },
+    { name: 'Bernd Brotteig', age: 56, imgPath: 'assets/img/Beer-belly 2.jpg' },
+    { name: 'Jochen Gebsattel', age: 42, imgPath: 'assets/img/Beer-belly 3.jpg' },
+    { name: 'Olaf Mayer', age: 10, imgPath: 'assets/img/Beer-belly 4.jpg' },
+    { name: 'Mister P.', age: 39, imgPath: 'assets/img/Beer-belly 5.jpg' }
   ];
 
-  selectedUsrName: string;
+  selectedUsr: User;
 
   constructor() {
   }
@@ -25,15 +25,8 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
   }
 
-  /*
-  * Method 'onNameChanged ()' as EventHandler for the
-  * user-defined '(nameChanged)' in the template.
-  * The information itself is contained in '$event'.
-  * 'nameChanged' will transfer a String as defined in 'user-name.component.ts'
-   */
-  onSelectedUsr( selectedUsrName: string) {
-    console.log(`'selectedUsrName': ${selectedUsrName}`);
-    this.selectedUsrName = selectedUsrName;
+  onSelectedUsr( selectedUsr: User) {
+    this.selectedUsr = selectedUsr;
   }
 
 }

@@ -1,22 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
     Welcome to {{ title }}!
   </h1>
-
-  <button (click)="toggle ()">Toggle</button>
-  <hr>
-  <img
-    *ngIf="showImg; else elseBlock"
-    src="../assets/img/Beer-belly%201.jpg"
-    alt="LinkedIn-Logo">
-
-  <ng-template #elseBlock>
-    <img
-      src="../assets/img/Beer-belly%202.jpg"
-      alt="LinkedIn-Logo">
-  </ng-template>
-
   <in-user></in-user>
 </div>
 

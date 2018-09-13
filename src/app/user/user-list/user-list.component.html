@@ -1,21 +1,21 @@
 <h3>User List</h3>
 <!--
-- {{selectedUsrName}}</h1>
-<in-user-name [name]="users[0]"
-  [isSelected]="selectedUsrName===users[0]"
-  (selectUsr)="onSelectedUsr( $event )">
-  </in-user-name>
-<in-user-name [name]="users[1]"
-              [isSelected]="selectedUsrName===users[1]"
-              (selectUsr)="onSelectedUsr( $event )"></in-user-name>
-<in-user-name [name]="users[2]"
-              [isSelected]="selectedUsrName===users[2]"
-              (selectUsr)="onSelectedUsr( $event )"></in-user-name>
+
+helpful attributes of directive '*ngFor':
+  - index
+  - count
+  - even
+  - odd
+  - first
+  - last
+
 -->
-<in-user-name *ngFor="let user of users"
-              [name]="user.name"
-              [age]="user.age"
-              [isSelected]="selectedUsrName===user.name"
+
+<in-user-name *ngFor="let user of users; index as i; count as c; first as f; even as e"
+              [user]="user"
+              [data]="'Index: ' + i + ', Count: ' + c + ', erstes Element: ' + f + ', Index ist gerade: ' + e"
+              [class.even]="e"
+              [isSelected]="selectedUsr===user"
               (selectUsr)="onSelectedUsr( $event )">
 </in-user-name>
 
