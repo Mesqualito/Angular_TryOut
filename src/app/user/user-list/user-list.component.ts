@@ -14,7 +14,8 @@ export class UserListComponent implements OnInit {
     { name: 'Bernd Brotteig', age: 56, imgPath: 'assets/img/Beer-belly 2.jpg' },
     { name: 'Jochen Gebsattel', age: 42, imgPath: 'assets/img/Beer-belly 3.jpg' },
     { name: 'Olaf Mayer', age: 10, imgPath: 'assets/img/Beer-belly 4.jpg' },
-    { name: 'Mister P.', age: 39, imgPath: 'assets/img/Beer-belly 5.jpg' }
+    { name: 'Mister P.', age: 39, imgPath: 'assets/img/Beer-belly 5.jpg' },
+    { name: 'Test Muster', age: 68, imgPath: 'assets/img/Beer-belly 6.jpg' }
   ];
 
   selectedUsr: User;

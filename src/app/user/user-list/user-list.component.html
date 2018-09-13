@@ -1,6 +1,6 @@
 <h3>User List</h3>
 
-<ng-template ngFor [ngForOf]="users" let-user let-e="even" let-c="count" let-f="first">
+<ng-template ngFor [ngForOf]="users" let-user let-i="index" let-e="even" let-c="count" let-f="first">
   <in-user-name [user]="user"
                 [data]="'Index: ' + i + ', Count: ' + c + ', erstes Element: ' + f + ', Index ist gerade: ' + e"
                 [class.even]="e"
