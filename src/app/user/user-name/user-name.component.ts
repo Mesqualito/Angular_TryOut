@@ -23,6 +23,9 @@ export class UserNameComponent implements OnInit {
 
   userNameStyleClass = 'user-name';
 
+  @Input ()
+  age; number;
+
   private _name = 'Jochen Haßfurter';
 
   @Input ()
