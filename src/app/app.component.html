@@ -7,11 +7,11 @@
   <button (click)="toggle ()">Toggle</button>
   <hr>
   <img
-    *ngIf="showImg"
+    *ngIf="showImg; else elseBlock"
     src="../assets/img/Beer-belly%201.jpg"
     alt="LinkedIn-Logo">
 
-  <ng-template [ngIf]="!showImg">
+  <ng-template #elseBlock>
     <img
       src="../assets/img/Beer-belly%202.jpg"
       alt="LinkedIn-Logo">
