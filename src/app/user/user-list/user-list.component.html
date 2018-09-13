@@ -1,23 +1,15 @@
 <h3>User List</h3>
-<!--
 
-helpful attributes of directive '*ngFor':
-  - index
-  - count
-  - even
-  - odd
-  - first
-  - last
-
--->
-
-<in-user-name *ngFor="let user of users; index as i; count as c; first as f; even as e"
-              [user]="user"
-              [data]="'Index: ' + i + ', Count: ' + c + ', erstes Element: ' + f + ', Index ist gerade: ' + e"
-              [class.even]="e"
-              [isSelected]="selectedUsr===user"
-              (selectUsr)="onSelectedUsr( $event )">
-</in-user-name>
+<ng-template ngFor [ngForOf]="users" let-user let-e="even" let-c="count" let-f="first">
+  <in-user-name [user]="user"
+                [data]="'Index: ' + i + ', Count: ' + c + ', erstes Element: ' + f + ', Index ist gerade: ' + e"
+                [class.even]="e"
+                [isSelected]="selectedUsr===user"
+                (selectUsr)="onSelectedUsr( $event )">
+  </in-user-name>
+  <p>This will also be multiplied for every 'user' in the 'users'-list,<br>
+    but is part of 'user-list.component', not a 'user-name.component'!</p>
+</ng-template>
 
 
 
